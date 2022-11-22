@@ -21,7 +21,8 @@ import Matthew from "./assets/Matthew.jpg";
 
 export default function App() {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={[styles.safeAreaView]}>
+      <StatusBar style="light" />
       <ScrollView style={[styles.container]}>
         <View style={[styles.header]}>
           <Image
@@ -154,6 +155,10 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
+  safeAreaView: {
+    backgroundColor: "black",
+  },
+
   container: {
     marginTop: Platform.OS === "android" ? Constants.statusBarHeight : 0,
     height: "100%",
@@ -208,7 +213,7 @@ const styles = StyleSheet.create({
   },
 
   descriptionContainer: {
-    width: 270,
+    flex: 1,
   },
 
   resumé: {
